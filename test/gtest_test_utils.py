@@ -31,6 +31,8 @@
 
 """Unit test utilities for Google C++ Testing Framework."""
 
+from __future__ import print_function
+
 __author__ = 'wan@google.com (Zhanyong Wan)'
 
 import atexit
@@ -178,7 +180,7 @@ def GetTestExecutablePath(executable_name, build_dir=None):
         'Unable to find the test binary "%s". Please make sure to provide\n'
         'a path to the binary via the --build_dir flag or the BUILD_DIR\n'
         'environment variable.' % path)
-    print >> sys.stderr, message
+    print(message, file=sys.stderr)
     sys.exit(1)
 
   return path

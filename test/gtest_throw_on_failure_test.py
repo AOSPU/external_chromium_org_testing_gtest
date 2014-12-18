@@ -35,6 +35,8 @@ This script invokes gtest_throw_on_failure_test_ (a program written with
 Google Test) with different environments and command line flags.
 """
 
+from __future__ import print_function
+
 __author__ = 'wan@google.com (Zhanyong Wan)'
 
 import os
@@ -70,7 +72,7 @@ def SetEnvVar(env_var, value):
 def Run(command):
   """Runs a command; returns True/False if its exit code is/isn't 0."""
 
-  print 'Running "%s". . .' % ' '.join(command)
+  print('Running "%s". . .' % ' '.join(command))
   p = gtest_test_utils.Subprocess(command)
   return p.exited and p.exit_code == 0
 

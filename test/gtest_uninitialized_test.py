@@ -31,6 +31,8 @@
 
 """Verifies that Google Test warns the user when not initialized properly."""
 
+from __future__ import print_function
+
 __author__ = 'wan@google.com (Zhanyong Wan)'
 
 import gtest_test_utils
@@ -46,8 +48,8 @@ def Assert(condition):
 
 def AssertEq(expected, actual):
   if expected != actual:
-    print 'Expected: %s' % (expected,)
-    print '  Actual: %s' % (actual,)
+    print('Expected: %s' % (expected,))
+    print('  Actual: %s' % (actual,))
     raise AssertionError
 
 
